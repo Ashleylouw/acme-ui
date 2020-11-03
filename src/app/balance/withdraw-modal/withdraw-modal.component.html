@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Hi</h1>
+<div mat-dialog-content>
+  <p>How much would you like to withdraw?</p>
+  <mat-form-field>
+    <mat-label>Amount</mat-label>
+        <input matInput type="number" [(ngModel)]="amount" [max]="getMax()" min="0">
+        <mat-hint *ngIf="maxExceeded" style="color: salmon;">*The balance has been exceeded</mat-hint>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button mat-button (click)="update()" cdkFocusInitial>Update</button>
+</div>
+
